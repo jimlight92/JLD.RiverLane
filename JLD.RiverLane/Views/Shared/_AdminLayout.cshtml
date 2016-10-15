@@ -1,0 +1,96 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+    <title>@ViewBag.Title - River Lane Photography</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~")';
+    </script>
+</head>
+
+<body>
+
+
+    <header>
+
+        <nav class="navbar navbar-inverse">
+
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button id="MenuButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        Menu
+                    </button>
+                    <ul class="nav navbar-nav navbar-right social">
+                        <li><a title="Facebook" href="http://www.facebook.com/riverlanephotography"><i class="fa fa-lg fa-facebook"></i></a></li>
+                        <li><a title="Instagram" href="https://www.instagram.com/riverlanephotography"><i class="fa fa-lg fa-instagram"></i></a></li>
+                        <li><a title="Contact" href="/home/contact"><i class="fa fa-lg fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>@Html.ActionLink("Dashboard", "dashboard", "general")</li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Content <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Price Packages", "index", "packages")</li>
+                                <li>@Html.ActionLink("Optional Extras", "index", "extras")</li>
+                                <li>@Html.ActionLink("Wedding Albums", "index", "albums")</li>
+                                <li>@Html.ActionLink("Recommends", "index", "recommends")</li>
+                            </ul>
+                        </li>
+
+                        <li>@Html.ActionLink("My Details", "contact", "home")</li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div class="container">
+            <h1>
+                @ViewBag.Title
+            </h1>
+        </div>
+    </header>
+
+    <div class="container">
+
+        @if (TempData["style"] != null && TempData["message"] != null)
+        {
+            <div class="alert alert-@TempData["style"]">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                @TempData["message"]
+            </div>
+        }
+
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p><span class="normal-font">&copy;</span> 2016 - Jim Light Development</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/grid")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

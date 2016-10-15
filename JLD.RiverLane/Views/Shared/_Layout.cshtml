@@ -1,42 +1,132 @@
-﻿<!DOCTYPE html>
+﻿@model RiverLane.ViewModels.PageLayoutModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    @if (!IsSectionDefined("MetaTags"))
+    {
+        <meta name="description" content="River Lane is not your average photographer! As well as stunning wedding photos, River Lane also specialise in capturing beautiful family portraits, memorable prom photos and stand out from the crowd property market photos! That's not all... River Lane also provides an exclusive graphic design service with creative ideas to make your wedding that extra bit special!  ">
+        <meta name="title" content="River Lane Photography - Wedding Photographer">
+    }
+    else
+    {
+        @RenderSection("MetaTags", required: false)
+    }
+
+    <meta name="keywords" content="Wedding Photographer, Wedding Photographer Bristol, Wedding Photography, Wedding Photography Bristol, Bristol, Graphic Design Bristol">
+    <meta name="author" content="River Lane Photography">
+
+    <title>@ViewBag.Title - River Lane Photography</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script type="text/javascript">
+        var rootUrl = '@Url.Content("~")';
+        var bannerFolder = "@Model.BannerFolder";
+        var numberOfImages = @Model.NumberOfImages;
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21343027-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+
+
+    <header>
+
+        <div class="hidden" id="HiddenImages">
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+        <nav class="navbar navbar-inverse">
+
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button id="MenuButton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        Menu
+                    </button>
+                    <ul class="nav navbar-nav navbar-right social">
+                        <li><a title="Facebook" href="http://www.facebook.com/riverlanephotography"><i class="fa fa-lg fa-facebook"></i></a></li>
+                        <li><a title="Instagram" href="https://www.instagram.com/riverlanephotography"><i class="fa fa-lg fa-instagram"></i></a></li>
+                        <li><a title="Contact" href="/home/contact"><i class="fa fa-lg fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li>@Html.ActionLink("About", "index", "home")</li>
+                        <li>@Html.ActionLink("Prices", "prices", "info")</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://riverlanephotography.zenfolio.com/">Portfolio</a></li>
+                                <li><a href="http://riverlanephotography.zenfolio.com/f394821356">Client Gallery</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Design", "design", "services")</li>
+                                <li>@Html.ActionLink("Property", "property", "services")</li>
+                                <li>@Html.ActionLink("Proms", "proms", "services")</li>
+                                <li>@Html.ActionLink("Portraits", "portraits", "services")</li>
+                            </ul>
+                        </li>
+
+                        <li>@Html.ActionLink("Contact", "contact", "home")</li>
+                        <li>@Html.ActionLink("Recommends", "recommends", "info")</li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <div id="slideshow">
+        </div>
+
+    </header>
+
+    <div id="body-content">
+        <div class="container">
+
+            @if (TempData["style"] != null && TempData["message"] != null)
+            {
+                <div class="alert alert-@TempData["style"]">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    @TempData["message"]
+                </div>
+            }
+
+            @RenderBody()
+
+            <hr />
+            <footer>
+                <p><span class="normal-font">&copy;</span> 2016 - Jim Light Development</p>
+            </footer>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/Site")
     @RenderSection("scripts", required: false)
 </body>
 </html>
