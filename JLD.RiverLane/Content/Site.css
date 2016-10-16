@@ -1,24 +1,416 @@
-﻿body {
-    padding-top: 50px;
+﻿@font-face {
+    font-family: 'BrokenGhost';
+    src: url(../fonts/BROKEN_GHOST.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Aaargh';
+    src: url(../fonts/Aaargh.ttf) format('truetype');
+}
+
+body {
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
+#body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+/* Site layout and colours */
+body {
+    font-family: Aaargh, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4285;
+    color: white;
+    background-color: black;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+p {
+    font-family: Aaargh, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-kerning: initial;
+}
+
+h4 {
+    font-family: Aaargh, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3 small {
+    color: white;
+}
+
+/* Nav Bar */
+.navbar {
+    background: black;
+    margin-bottom: 0px;
+    border-radius: 0;
+    border-bottom: 0;
+    font-size: 14px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: rgba(189, 190, 147, 1);
+    }
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-top-color: rgba(189, 190, 147, 1);
+    border-bottom-color: rgba(189, 190, 147, 1);
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a .caret {
+    border-top-color: rgba(189, 190, 147, 1);
+    border-bottom-color: rgba(189, 190, 147, 1);
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #eeeeee;
+    border-color: black;
+}
+
+.navbar-inverse .navbar-nav > .open > a .caret, .navbar-inverse .navbar-nav > .open > a:hover .caret, .navbar-inverse .navbar-nav > .open > a:focus .caret {
+    border-top-color: rgba(189, 190, 147, 1);
+    border-bottom-color: rgba(189, 190, 147, 1);
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
+    border-top-color: rgba(189, 190, 147, 1);
+    border-bottom-color: rgba(189, 190, 147, 1);
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .active > a {
+    background: rgba(189, 190, 147, 1);
+    color: #333333;
+}
+
+.navbar .dropdown-menu {
+    border-top: 1px solid #fff;
+}
+
+.dropdown-menu > li > a:hover {
+    color: rgba(189, 190, 147, 1);
+    background-color: black;
+}
+
+.navbar-nav > li > .dropdown-menu {
+    margin-top: -1px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    z-index: 0;
+}
+
+/* bootstrap.css (4592, 62) */
+@media all and (max-width:767px) {
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: white;
+    }
+
+        .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+            color: rgba(189, 190, 147, 1);
+            background-color: black;
+        }
+
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .active > a {
+        border: none !important;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: rgba(189, 190, 147, 1);
+    }
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    color: white;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    list-style: none;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 0px;
+    -webkit-box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.3);
+    background-clip: padding-box;
+    z-index: 1;
+}
+
+    .dropdown-menu > li > a {
+        color: white;
+    }
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .active > a {
+    background: black;
+    color: white;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: none;
+    z-index: 1000;
+}
+
+.social {
+    display: inline-block;
+}
+
+    .social li {
+        display: inline-block;
+    }
+
+header {
+    background: black;
+    color: #fff;
+}
+
+/* Jumbotron stuff */
+
+.jumbotron {
+    padding: 0 !important;
+}
+
+.jumbotronContainer {
+    padding: 0;
+    margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 40%;
+}
+
+#slideshow {
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+    #slideshow > div {
+        position: absolute;
+    }
+
+.container .jumbotron {
+    border-radius: 0;
+}
+
+@media (max-width: 768px) {
+    .social {
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .social {
+        margin-left: -15px;
+    }
+}
+
+/* Content-y stuff */
+#body-content {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #body-content {
+        top: 40%;
+    }
+}
+
+@media (min-width: 768px) {
+    #body-content {
+        top: 500px;
+    }
+}
+
+.fit-to-div {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.body-image {
+    margin-top: 20px;
+}
+
+#MenuButton {
+    color: white;
+}
+
+h3, .h3 {
+    color: rgba(189, 190, 147, 1);
+    font-size: 22px;
+    font-family: BrokenGhost, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Remove padding on left */
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+}
+
+#body-content {
+    padding-left: 0;
+    clear: both;
+}
+
+.alert {
+    margin: 0 15px;
+}
+
+.alert-danger {
+    border: 1px solid #b94a48;
+}
+
+/* Forms */
+
+.form-control {
+    background-color: white;
+    border: 2px solid rgba(189, 190, 147, 1);
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+    .form-control:focus {
+        border-color: rgba(192, 194, 110, 1);
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(192, 194, 110, 1);
+        box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(192, 194, 110, 1);
+    }
+
+.validation-summary-errors {
+    border: 1px solid #b94a48;
+    color: #b94a48;
+    background-color: #f2dede;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin: 0 15px;
+}
+
+select::-ms-expand {
+    width: 12px;
+    border: none;
+    background: #fff;
+}
+
+.textarea {
+    width: 100% !important;
+    max-width: 1000px;
+}
+
+.datepicker {
+    z-index: 1200 !important;
+}
+
+/* Prices */
+.price-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.price-points {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+    .price-points > li {
+        padding-left: 5px;
+        padding-bottom: 2px;
+    }
+
+.price-container {
+    margin-bottom: 10px;
+    margin-left: -15px;
+}
+
+    .price-container h2 {
+        margin-top: 0;
+    }
+
+    .price-container .panel, .price-container .panel-heading, .price-container .btn {
+        background-color: black;
+        border: none;
+    }
+
+    .price-container .panel-body > .btn {
+        background-color: black;
+        border: 1px solid white;
+        color: white;
+        position: relative;
+    }
+
+        .price-container .panel-body > .btn:hover {
+            top: 1px;
+            left: 1px;
+        }
+
+    .price-container .panel-heading {
+        color: rgba(189, 190, 147, 1);
+        font-size: 22px;
+        font-family: BrokenGhost, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+        .price-container .panel-heading > .btn {
+            color: white;
+        }
+
+    .price-container .panel-body {
+        padding-top: 0;
+    }
+
+.normal-font {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Design */
+.table-plan-image {
+    margin-top: 0px;
+}
+
+.bullet-points {
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+h3 > small {
+    font-size: 18px;
+}
+
+/* Recommends */
+.recommends-title {
+    text-decoration: underline;
+    color: rgba(189, 190, 147, 1);
+    margin-bottom: 2px;
+}
+
+.recommends-detail {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.recommends-row {
+    margin-bottom: 25px;
+}
+
+.recommends-section {
+    margin-bottom: 25px;
+}
+
+.recommends-subtitle {
+    margin-bottom: 2px;
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLD.RiverLane", "JLD.RiverL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLD.RiverLane.UnitTests", "JLD.RiverLane.UnitTests\JLD.RiverLane.UnitTests.csproj", "{5D0B048D-5E63-49A2-88E0-9FA0E83F1562}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JLD.RiverLane.IntegrationTests", "JLD.RiverLane.IntegrationTests\JLD.RiverLane.IntegrationTests.csproj", "{78CCBC67-F60E-4F7C-B360-31DA5CC2EB38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D0B048D-5E63-49A2-88E0-9FA0E83F1562}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D0B048D-5E63-49A2-88E0-9FA0E83F1562}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D0B048D-5E63-49A2-88E0-9FA0E83F1562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CCBC67-F60E-4F7C-B360-31DA5CC2EB38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CCBC67-F60E-4F7C-B360-31DA5CC2EB38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CCBC67-F60E-4F7C-B360-31DA5CC2EB38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CCBC67-F60E-4F7C-B360-31DA5CC2EB38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

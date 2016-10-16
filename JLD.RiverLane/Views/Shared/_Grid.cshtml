@@ -1,61 +1,57 @@
 ﻿@using GridMvc.Columns
 @model GridMvc.IGrid
 @if (Model == null) { return; }
+
+
 @if (!Model.ItemsToDisplay.Any())
 {
     <div class="alert alert-info">
-        <span class="glyphicon glyphicon-exclamation-sign"></span>
-        There are no items to display.
+        <span class="glyphicon glyphicon-info-sign">&nbsp;@Model.EmptyGridText</span>
     </div>
+}
+else if (Model.RenderOptions.RenderRowsOnly)
+{
+    @RenderGridBody();
 }
 else
 {
-    if (Model.RenderOptions.RenderRowsOnly)
-    {
-        @RenderGridBody();
-    }
-    else
-    {
-        <div class="grid-mvc" data-lang="@Model.Language" data-gridname="@Model.RenderOptions.GridName" data-selectable="@Model.RenderOptions.Selectable.ToString().ToLower()" data-multiplefilters="@Model.RenderOptions.AllowMultipleFilters.ToString().ToLower()">
-            <div class="grid-wrap">
-                <table class="table grid-table">
-                    @* Draw grid header *@
-                    <thead>
-                        @RenderGridHeader()
-                    </thead>
-                    <tbody>
-                        @RenderGridBody()
-                    </tbody>
-                </table>
-                @RenderGridPager()
-            </div>
+    <div class="grid-mvc" data-lang="@Model.Language" data-gridname="@Model.RenderOptions.GridName" data-selectable="@Model.RenderOptions.Selectable.ToString().ToLower()" data-multiplefilters="@Model.RenderOptions.AllowMultipleFilters.ToString().ToLower()">
+        <div class="grid-wrap">
+            <table class="table grid-table">
+                @* Draw grid header *@
+                <thead>
+                    @RenderGridHeader()
+                </thead>
+                <tbody>
+                    @RenderGridBody()
+                </tbody>
+            </table>
+            @RenderGridPager()
         </div>
-    }
+    </div>
 }
-
-
 @helper RenderGridBody()
 {
-    if (!Model.ItemsToDisplay.Any())
+if (!Model.ItemsToDisplay.Any())
+{
+        <tr class="grid-empty-text">
+            <td colspan="@Model.Columns.Count()">
+                @Model.EmptyGridText
+            </td>
+        </tr>
+}
+else
+{
+    foreach (object item in Model.ItemsToDisplay)
     {
-    <tr class="grid-empty-text">
-        <td colspan="@Model.Columns.Count()">
-            @Model.EmptyGridText
-        </td>
-    </tr>
+            <tr class="grid-row @Model.GetRowCssClasses(item)">
+                @foreach (IGridColumn column in Model.Columns)
+                {
+                    @column.CellRenderer.Render(column, column.GetCell(item))
+                }
+            </tr>
     }
-    else
-    {
-        foreach (object item in Model.ItemsToDisplay)
-        {
-    <tr class="grid-row @Model.GetRowCssClasses(item)">
-        @foreach (IGridColumn column in Model.Columns)
-        {
-            @column.CellRenderer.Render(column, column.GetCell(item))
-        }
-    </tr>
-        }
-    }
+}
 }
 @helper RenderGridHeader()
 {
@@ -68,10 +64,10 @@ else
 }
 @helper RenderGridPager()
 {
-    if (Model.EnablePaging && Model.Pager != null)
-    {
-    <div class="grid-footer">
-        @Html.Partial(Model.Pager.TemplateName, Model.Pager)
-    </div>
-    }
+if (Model.EnablePaging && Model.Pager != null)
+{
+        <div class="grid-footer">
+            @Html.Partial(Model.Pager.TemplateName, Model.Pager)
+        </div>
+}
 }

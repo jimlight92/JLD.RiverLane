@@ -1,0 +1,20 @@
+﻿@model JLD.RiverLane.ViewModels.Users.UsersIndexModel
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@Html.Grid(Model.Users).Columns(columns =>
+{
+    columns.Add(model => model.Id).Titled("Id").SetWidth("10%");
+    columns.Add(model => model.Username).Titled("Username").SetWidth("80%");
+    columns.Add()
+    .RenderValueAs(o => Html.ActionLink("Edit", "edit", "users", new { id = o.Id }, new { }))
+    .Sanitized(false)
+    .Encoded(false)
+    .SetWidth("10%");
+})
+
+@Html.ActionLink("Add User", "create", "users", new { },  new { @class = "btn btn-primary pull-right" })
+<div class="clearfix"></div>

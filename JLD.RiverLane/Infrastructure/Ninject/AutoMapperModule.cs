@@ -16,9 +16,10 @@ namespace JLD.RiverLane.Infrastructure.Ninject
 
         private IMapper CreateMapper()
         {
-            var config = new MapperConfiguration(cfg => cfg.AddProfiles(Assembly.GetExecutingAssembly()));
+            var config = new MapperConfiguration(cfg => AutoMapperConfig.Configure(cfg));
 
             return config.CreateMapper();
         }
+
     }
 }
