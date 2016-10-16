@@ -12,22 +12,9 @@ namespace JLD.RiverLane.DataAccess.Conventions
         {
             if (association.IsForeignKey)
             {
-                MakeCaseRecordRequiredInNavigationProperties(association);
                 ApplyConvention(association.Constraint.FromProperties);
                 ApplyConvention(association.Constraint.ToProperties);
             }
-        }
-
-        private static void MakeCaseRecordRequiredInNavigationProperties(AssociationType association)
-        {
-            if (association.Constraint.FromRole.Name == "CaseRecord" && !(association.Constraint.ToRole.Name == "Body"))
-            {
-                if (association.Constraint.FromRole.RelationshipMultiplicity == RelationshipMultiplicity.One)
-                {
-                    association.Constraint.FromRole.DeleteBehavior = OperationAction.Cascade;
-                    association.Constraint.ToProperties.ForEach(x => x.Nullable = false);
-                };
-            };
         }
 
         private void ApplyConvention(ReadOnlyMetadataCollection<EdmProperty> properties)

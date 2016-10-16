@@ -1,4 +1,5 @@
 ﻿using JLD.RiverLane.DataAccess.Conventions;
+using JLD.RiverLane.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
@@ -12,7 +13,12 @@ namespace JLD.RiverLane.DataAccess
         {
             Database.SetInitializer<RiverLaneContext>(null);
         }
-        
+
+        /// <summary>
+        /// Retrieves all users in from the database
+        /// </summary>
+        public DbSet<UserAccount> Users { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
