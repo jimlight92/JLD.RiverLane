@@ -187,11 +187,14 @@
     <Compile Include="Security\HashProvider.cs" />
     <Compile Include="Security\HashSaltPair.cs" />
     <Compile Include="Security\IHashProvider.cs" />
+    <Compile Include="Services\Users\IUserCreateService.cs" />
     <Compile Include="Services\Users\IUsersIndexService.cs" />
     <Compile Include="Services\Users\IUsersService.cs" />
+    <Compile Include="Services\Users\UserCreateService.cs" />
     <Compile Include="Services\Users\UsersIndexService.cs" />
     <Compile Include="Services\Users\UsersService.cs" />
     <Compile Include="ViewModels\Users\UserAccountProfile.cs" />
+    <Compile Include="ViewModels\Users\UserCreateModel.cs" />
     <Compile Include="ViewModels\Users\UserModel.cs" />
     <Compile Include="ViewModels\Users\UsersIndexModel.cs" />
   </ItemGroup>

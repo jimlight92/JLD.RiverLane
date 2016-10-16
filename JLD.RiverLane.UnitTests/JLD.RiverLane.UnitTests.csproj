@@ -75,6 +75,7 @@
     <Compile Include="Models\UserAccountTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\HashProviderTests.cs" />
+    <Compile Include="Services\Users\UserCreateServiceTests.cs" />
     <Compile Include="Services\Users\UsersIndexServiceTests.cs" />
     <Compile Include="Services\Users\UsersServiceTests.cs" />
   </ItemGroup>
