@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(JLD.RiverLane.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(JLD.RiverLane.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(JLD.RiverLane.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(JLD.RiverLane.NinjectWebCommon), "Stop")]
 
-namespace JLD.RiverLane.App_Start
+namespace JLD.RiverLane
 {
     using System;
     using System.Web;

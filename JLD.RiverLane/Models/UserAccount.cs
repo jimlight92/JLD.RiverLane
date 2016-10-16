@@ -19,9 +19,8 @@ namespace JLD.RiverLane.Models
         public UserAccount(string username, string password)
         {
             Check.NotNullOrEmpty(username, nameof(username));
-            Check.NotNullOrEmpty(password, nameof(password));
-
             Username = username;
+
             ChangePassword(password);
         }
 
@@ -55,6 +54,8 @@ namespace JLD.RiverLane.Models
         /// <param name="password"></param>
         public void ChangePassword(string password)
         {
+            Check.NotNullOrEmpty(password, nameof(password));
+
             var provider = GetHashProvider();
             var pair = provider.GenerateHashAndSalt(password);
             PasswordHash = pair.Hash;

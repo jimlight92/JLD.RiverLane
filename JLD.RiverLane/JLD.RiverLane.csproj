@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -151,6 +155,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DataAccess\Conventions\ColumnNameConvention.cs" />
     <Compile Include="DataAccess\Conventions\ForeignKeyConvention.cs" />
     <Compile Include="DataAccess\Conventions\PrimaryKeyConvention.cs" />
@@ -163,6 +168,9 @@
     </Compile>
     <Compile Include="Infrastructure\Attributes\AuthorizeRequestAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\FontAwesomeClassAttribute.cs" />
+    <Compile Include="Infrastructure\Ninject\AutoMapperModule.cs" />
+    <Compile Include="Infrastructure\Ninject\ControllerModules\UsersModule.cs" />
+    <Compile Include="Infrastructure\Ninject\DbContextModule.cs" />
     <Compile Include="Infrastructure\Settings.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />
     <Compile Include="Infrastructure\SiteSettings.cs" />
@@ -174,6 +182,13 @@
     <Compile Include="Security\HashProvider.cs" />
     <Compile Include="Security\HashSaltPair.cs" />
     <Compile Include="Security\IHashProvider.cs" />
+    <Compile Include="Services\Users\IUsersIndexService.cs" />
+    <Compile Include="Services\Users\IUsersService.cs" />
+    <Compile Include="Services\Users\UsersIndexService.cs" />
+    <Compile Include="Services\Users\UsersService.cs" />
+    <Compile Include="ViewModels\Users\UserAccountProfile.cs" />
+    <Compile Include="ViewModels\Users\UserModel.cs" />
+    <Compile Include="ViewModels\Users\UsersIndexModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -216,6 +231,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
