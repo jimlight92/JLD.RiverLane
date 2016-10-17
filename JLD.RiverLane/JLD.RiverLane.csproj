@@ -56,6 +56,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.MVC5.6.2.1.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="GridMvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Grid.Mvc.3.0.0\lib\net40\GridMvc.dll</HintPath>
       <Private>True</Private>
@@ -173,9 +181,16 @@
     </Compile>
     <Compile Include="Infrastructure\Attributes\AuthorizeRequestAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\FontAwesomeClassAttribute.cs" />
+    <Compile Include="Infrastructure\FluentValidation\ContextFactory.cs" />
+    <Compile Include="Infrastructure\FluentValidation\CustomValidatorExtensions.cs" />
+    <Compile Include="Infrastructure\FluentValidation\IContextFactory.cs" />
+    <Compile Include="Infrastructure\FluentValidation\NinjectValidatorFactory.cs" />
+    <Compile Include="Infrastructure\FluentValidation\Validators\UniqueValidator.cs" />
     <Compile Include="Infrastructure\Ninject\AutoMapperModule.cs" />
+    <Compile Include="Infrastructure\Ninject\ContextFactoryModule.cs" />
     <Compile Include="Infrastructure\Ninject\ControllerModules\UsersModule.cs" />
     <Compile Include="Infrastructure\Ninject\DbContextModule.cs" />
+    <Compile Include="Infrastructure\Ninject\ValidatorModule.cs" />
     <Compile Include="Infrastructure\Settings.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />
     <Compile Include="Infrastructure\SiteSettings.cs" />
@@ -195,8 +210,10 @@
     <Compile Include="Services\Users\UsersService.cs" />
     <Compile Include="ViewModels\Users\UserAccountProfile.cs" />
     <Compile Include="ViewModels\Users\UserCreateModel.cs" />
+    <Compile Include="ViewModels\Users\UserCreateModelValidator.cs" />
     <Compile Include="ViewModels\Users\UserModel.cs" />
     <Compile Include="ViewModels\Users\UsersIndexModel.cs" />
+    <Compile Include="ViewModels\ViewModelValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
