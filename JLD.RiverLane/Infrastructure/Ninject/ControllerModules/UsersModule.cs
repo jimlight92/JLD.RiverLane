@@ -12,6 +12,9 @@ namespace JLD.RiverLane.Infrastructure.Ninject.ControllerModules
 
             Bind<IUsersIndexService>()
                 .To<UsersIndexService>();
+
+            Bind<IUserCreateService>()
+                .To<UserCreateService>();
         }
     }
 }

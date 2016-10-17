@@ -3,5 +3,7 @@
     public interface IUsersService
     {
         IUsersIndexService Index { get; }
+
+        IUserCreateService Create { get; }
     }
 }

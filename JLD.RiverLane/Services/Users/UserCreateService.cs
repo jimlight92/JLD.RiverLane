@@ -1,7 +1,6 @@
 ﻿using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 using JLD.RiverLane.ViewModels.Users;
-using System;
 
 namespace JLD.RiverLane.Services.Users
 {
@@ -17,17 +16,22 @@ namespace JLD.RiverLane.Services.Users
 
         public UserCreateModel Get()
         {
-            throw new NotImplementedException();
+            return new UserCreateModel();
         }
 
         public UserCreateModel Get(UserCreateModel model)
         {
-            throw new NotImplementedException();
+            return model;
         }
 
         public UserAccount Post(UserCreateModel model)
         {
-            throw new NotImplementedException();
+            var user = new UserAccount(model.Username);
+            user.ChangePassword(model.PasswordDetails.Password);
+            context.Users.Add(user);
+            context.SaveChanges();
+
+            return user;
         }
     }
 }

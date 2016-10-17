@@ -1,0 +1,32 @@
+﻿@model DateTime?
+
+@{
+    var timeLabel = ViewContext.ViewData.ModelMetadata.DisplayName.Replace("Date", "Time");
+    var required = ViewContext.ViewData.ModelMetadata.IsRequired ? "required" : "";
+
+    var htmlAttributes = HtmlHelper.AnonymousObjectToHtmlAttributes(ViewData["htmlAttributes"]);
+
+    if (htmlAttributes != null && htmlAttributes.ContainsKey("class") && string.IsNullOrEmpty(required))
+    {
+        var htmlClass = htmlAttributes["class"].ToString();
+        required = htmlClass.Contains("required") ? "required" : "";
+    }
+}
+
+<div class="form-group">
+
+    @Html.Label("Date", ViewContext.ViewData.ModelMetadata.DisplayName, new { @class = "control-label col-md-2 " + required })
+    <div class="col-md-4">
+        @Html.TextBox("Date", Model.GetDateOnlyString(), "{0:d}", new { Id = ViewContext.ViewData.ModelMetadata.PropertyName + "_Date", @class = "form-control date-picker", data_val = ViewContext.ViewData.ModelMetadata.IsRequired, @maxlength = "10" })
+
+        @Html.ValidationMessage("Date", new { @class = "text-danger" })
+    </div>
+
+    @Html.Label("Time", timeLabel, new { @class = "control-label col-md-2 " + required })
+    <div class="col-md-4">
+        @Html.TextBox("Time", Model.GetTimeOnlyString(), "{0:t}", new { Id = ViewContext.ViewData.ModelMetadata.PropertyName + "_Time", @class = "form-control time-format", data_val = ViewContext.ViewData.ModelMetadata.IsRequired, @maxlength = "5" })
+
+        @Html.ValidationMessage("Time", new { @class = "text-danger" })
+    </div>
+
+</div>

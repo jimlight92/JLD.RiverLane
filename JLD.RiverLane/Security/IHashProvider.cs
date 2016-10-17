@@ -8,16 +8,16 @@
         /// <summary>
         /// Returns a <see cref="HashSaltPair"/> containing a hash and the salt that was used to generate it
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="data"></param>
         /// <returns></returns>
-        HashSaltPair GenerateHashAndSalt(string password);
+        HashSaltPair GenerateHashAndSalt(string data);
 
         /// <summary>
         /// Returns a <see cref="HashSaltPair"/> of the given password generated using the given salt
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="data"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        string GenerateHash(string password, string salt);
+        string GenerateHash(string data, string salt);
     }
 }

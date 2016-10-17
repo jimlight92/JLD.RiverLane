@@ -1,0 +1,36 @@
+﻿@model JLD.RiverLane.ViewModels.Users.UserCreateModel
+
+@{
+    ViewBag.Title = "Add User";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@section scripts {
+    <script src="@Url.Content("~/Scripts/Password.js")"></script>
+}
+
+@using (Html.BeginForm("create", "users", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken();
+    @Html.ValidationSummary(false, "", new { @class = "alert alert-danger" })
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+
+        </div>
+
+        @Html.EditorFor(model => model.PasswordDetails)
+
+    </div>
+
+    <input type="submit" class="btn btn-primary pull-right" value="Add User" />
+    <div class="clearfix"></div>
+}
+
+

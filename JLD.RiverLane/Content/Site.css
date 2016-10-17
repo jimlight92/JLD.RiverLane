@@ -317,6 +317,27 @@ select::-ms-expand {
     z-index: 1200 !important;
 }
 
+
+.help-hint {
+    /* Adaptation of help-block for smaller hints underneath fields */
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: #737373;
+    font-size: 0.85em;
+}
+
+    .help-hint:before {
+        font-family: 'Glyphicons Halflings';
+        content: "\e086 ";
+        margin-right: 3px;
+    }
+
+.help-icon {
+    cursor: pointer;
+    margin-top: 2px;
+}
+
 /* Prices */
 .price-image {
     max-width: 100%;
@@ -413,4 +434,27 @@ h3 > small {
 
 .recommends-subtitle {
     margin-bottom: 2px;
+}
+
+/* VALIDATION */
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors.alert {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.required::after {
+    /* Add an asterisk to required fields */
+    color: #a94442;
+    content: ' *';
+}
+
+.input-validation-error {
+    /* Highlight fields marked by unobtrusive validation */
+    border-color: #b94a48;
+    background: #f2dede;
 }

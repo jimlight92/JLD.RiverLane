@@ -1,0 +1,37 @@
+﻿@model HttpPostedFileBase
+
+@{
+    var htmlAttributes = HtmlHelper.AnonymousObjectToHtmlAttributes(ViewData["htmlAttributes"]);
+    var htmlClass = String.Empty;
+    var id = String.Empty;
+    var name = String.Empty;
+    if (htmlAttributes != null && htmlAttributes.ContainsKey("class"))
+    {
+        htmlClass = htmlAttributes["class"].ToString();
+        if (!htmlClass.Contains("form-control")) { htmlClass = "form-control " + htmlClass; };
+    }
+    if (htmlAttributes != null && htmlAttributes.ContainsKey("id"))
+    {
+        id = htmlAttributes["id"].ToString();
+    }
+    if (htmlAttributes != null && htmlAttributes.ContainsKey("name"))
+    {
+        name = htmlAttributes["name"].ToString();
+    }
+}
+
+<div class="input-group">
+    <span class="input-group-btn">
+        <span class="btn btn-default btn-file">
+            Browse...
+            @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), new { type = "file", id = id, name = name })
+        </span>
+    </span>
+
+    @{
+        var feedbackId = id + "_Feedback";
+        var feedbackName = name + "_Feedback";
+    }
+
+    <input type="text" class="form-control" id="@feedbackId" name="@feedbackName" data-file-feedback readonly />
+</div>

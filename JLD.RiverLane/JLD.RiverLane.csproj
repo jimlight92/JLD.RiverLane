@@ -208,7 +208,9 @@
     <Compile Include="Services\Users\UserCreateService.cs" />
     <Compile Include="Services\Users\UsersIndexService.cs" />
     <Compile Include="Services\Users\UsersService.cs" />
-    <Compile Include="ViewModels\Users\UserAccountProfile.cs" />
+    <Compile Include="ViewModels\Users\PasswordModel.cs" />
+    <Compile Include="ViewModels\Users\PasswordModelValidator.cs" />
+    <Compile Include="ViewModels\Users\UserProfile.cs" />
     <Compile Include="ViewModels\Users\UserCreateModel.cs" />
     <Compile Include="ViewModels\Users\UserCreateModelValidator.cs" />
     <Compile Include="ViewModels\Users\UserModel.cs" />
@@ -223,12 +225,12 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\BROKEN_GHOST.ttf" />
     <Content Include="fonts\Aaargh.ttf" />
     <Content Include="Grid.mvc.readme" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\gridmvc.js" />
     <Content Include="Scripts\gridmvc.lang.ru.js" />
     <Content Include="Scripts\gridmvc.min.js" />
@@ -240,6 +242,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Password.js" />
     <Content Include="Scripts\Prices.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -261,6 +264,12 @@
     <Content Include="Views\Shared\_Grid.cshtml" />
     <Content Include="Views\Shared\_GridPager.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PasswordModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

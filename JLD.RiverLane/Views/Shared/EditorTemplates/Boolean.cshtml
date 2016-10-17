@@ -1,0 +1,19 @@
+﻿@model Boolean?
+
+@if(ViewData.ModelMetadata.IsNullableValueType)
+{
+    List<SelectListItem> options = new List<SelectListItem>();
+    options.Add(new SelectListItem() { Text = "Yes", Value = Boolean.TrueString, Selected = Model.HasValue && Model.Value });
+    options.Add(new SelectListItem() { Text = "No", Value = Boolean.FalseString, Selected = Model.HasValue && !Model.Value });
+    
+    @Html.DropDownListFor(x => x, options, string.Empty, new { @class = "form-control"})
+}
+else
+{
+    <div class="checkbox">
+        <label class="control-label">
+            @Html.CheckBox("", Model.GetValueOrDefault())
+            @Html.DisplayNameFor(x => x)
+        </label>
+    </div>
+}

@@ -17,7 +17,7 @@ namespace JLD.RiverLane.DataAccess
         /// <summary>
         /// Retrieves all users in from the database
         /// </summary>
-        public DbSet<UserAccount> Users { get; set; }
+        public virtual DbSet<UserAccount> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

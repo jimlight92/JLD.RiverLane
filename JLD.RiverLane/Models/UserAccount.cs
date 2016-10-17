@@ -15,13 +15,10 @@ namespace JLD.RiverLane.Models
         /// Initialises a new instance of the <see cref="UserAccount"/> class with the required fields
         /// </summary>
         /// <param name="username"></param>
-        /// <param name="password"></param>
-        public UserAccount(string username, string password)
+        public UserAccount(string username)
         {
             Check.NotNullOrEmpty(username, nameof(username));
             Username = username;
-
-            ChangePassword(password);
         }
 
         public string Username { get; protected set; }
@@ -37,15 +34,30 @@ namespace JLD.RiverLane.Models
         /// <returns></returns>
         public bool PasswordIsMatch(string password)
         {
-            var provider = GetHashProvider();
-            var hash = provider.GenerateHash(password, PasswordSalt);
+            var hash = Provider.GenerateHash(password, PasswordSalt);
 
             return hash.Equals(PasswordHash);
         }
 
-        protected virtual IHashProvider GetHashProvider()
+        private IHashProvider provider;
+        /// <summary>
+        /// Gets or sets the hash provider used to store and verify passwords.
+        /// </summary>
+        protected virtual IHashProvider Provider
         {
-            return new HashProvider();
+            get
+            {
+                if (provider == null)
+                {
+                    provider = new HashProvider();
+                }
+
+                return provider;
+            }
+            set
+            {
+                provider = value;
+            }
         }
 
         /// <summary>
@@ -55,9 +67,8 @@ namespace JLD.RiverLane.Models
         public void ChangePassword(string password)
         {
             Check.NotNullOrEmpty(password, nameof(password));
-
-            var provider = GetHashProvider();
-            var pair = provider.GenerateHashAndSalt(password);
+            
+            var pair = Provider.GenerateHashAndSalt(password);
             PasswordHash = pair.Hash;
             PasswordSalt = pair.Salt;
         }

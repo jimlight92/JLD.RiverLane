@@ -9,16 +9,11 @@ namespace JLD.RiverLane.Infrastructure.FluentValidation
     /// </summary>
     public class ContextFactory : IContextFactory
     {
-        private readonly string connectionString;
-
         /// <summary>
         /// Initializes a new instance of the ContextFactory class, used to inject the context into FluentValidation Validators
         /// </summary>
-        /// <param name="connectionString">The connection string to the database</param>
-        public ContextFactory(string connectionString)
+        public ContextFactory()
         {
-            Check.NotNullOrEmpty(connectionString, nameof(connectionString));
-            this.connectionString = connectionString;
         }
 
         /// <summary>

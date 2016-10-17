@@ -13,15 +13,15 @@ namespace JLD.RiverLane.Security
         /// <summary>
         /// Returns a <see cref="HashSaltPair"/> containing a hash and the salt that was used to generate it
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="data"></param>
         /// <returns></returns>
 
-        public HashSaltPair GenerateHashAndSalt(string plainTextString)
+        public HashSaltPair GenerateHashAndSalt(string data)
         {
-            Check.NotNullOrEmpty(plainTextString, nameof(plainTextString));
+            Check.NotNullOrEmpty(data, nameof(data));
 
             var saltBytes = GenerateSalt(32);
-            var hashBytes = GenerateHashBytes(plainTextString, saltBytes);
+            var hashBytes = GenerateHashBytes(data, saltBytes);
 
             var hash = Convert.ToBase64String(hashBytes);
             var salt = Convert.ToBase64String(saltBytes);
@@ -37,10 +37,10 @@ namespace JLD.RiverLane.Security
             return buff;
         }
 
-        private static byte[] GenerateHashBytes(string plainTextString, byte[] saltBytes)
+        private static byte[] GenerateHashBytes(string data, byte[] saltBytes)
         {
             var algorithm = new SHA256Managed();
-            var plainTextBytes = Encoding.UTF8.GetBytes(plainTextString);
+            var plainTextBytes = Encoding.UTF8.GetBytes(data);
             var plainTextWithSaltBytes = AppendByteArrays(plainTextBytes, saltBytes);
             var hashBytes = algorithm.ComputeHash(plainTextWithSaltBytes);
             return hashBytes;
@@ -62,16 +62,16 @@ namespace JLD.RiverLane.Security
         /// <summary>
         /// Returns a <see cref="HashSaltPair"/> of the given password generated using the given salt
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="data"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        public string GenerateHash(string plainTextString, string salt)
+        public string GenerateHash(string data, string salt)
         {
-            Check.NotNullOrEmpty(plainTextString, nameof(plainTextString));
+            Check.NotNullOrEmpty(data, nameof(data));
             Check.NotNullOrEmpty(salt, nameof(salt));
 
             var saltBytes = Convert.FromBase64String(salt);
-            var hashBytes = GenerateHashBytes(plainTextString, saltBytes);
+            var hashBytes = GenerateHashBytes(data, saltBytes);
 
             var hash = Convert.ToBase64String(hashBytes);
 

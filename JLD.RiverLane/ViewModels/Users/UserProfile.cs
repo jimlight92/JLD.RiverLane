@@ -3,9 +3,9 @@ using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.ViewModels.Users
 {
-    public class UserAccountProfile : Profile
+    public class UserProfile : Profile
     {
-        public UserAccountProfile()
+        public UserProfile()
         {
             CreateMap<UserAccount, UserModel>();
         }

@@ -1,0 +1,17 @@
+﻿@model DateTime?
+@{
+    var htmlAttributes = HtmlHelper.AnonymousObjectToHtmlAttributes(ViewData["htmlAttributes"]);
+    var htmlClass = htmlAttributes["class"] != null ? htmlAttributes["class"].ToString() : "";
+
+    if (!htmlClass.Contains("form-control"))
+    {
+        htmlClass = "form-control " + htmlClass;
+    }
+
+    if (!htmlClass.Contains("date-picker"))
+    {
+        htmlClass = "date-picker " + htmlClass;
+    }
+
+    @Html.TextBoxFor(model => model, "{0:d}", new { @class = htmlClass, @maxlength = "10"})
+}

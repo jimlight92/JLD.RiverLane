@@ -14,7 +14,7 @@ namespace JLD.RiverLane.IntegrationTests
         /// <returns></returns>
         public static UserAccount User(string username)
         {
-            return new UserAccount(username, "any");
+            return new UserAccount(username);
         }
     }
 }

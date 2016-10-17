@@ -1,6 +1,4 @@
-﻿using JLD.RiverLane.DataAccess;
-using JLD.RiverLane.Models;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace JLD.RiverLane.Controllers
 {

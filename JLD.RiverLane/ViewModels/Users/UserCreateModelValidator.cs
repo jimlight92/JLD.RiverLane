@@ -13,6 +13,9 @@ namespace JLD.RiverLane.ViewModels.Users
             RuleFor(x => x.Username)
                 .NotEmpty()
                 .Length(1, 50);
+            
+            RuleFor(x => x.PasswordDetails)
+                .SetValidator(new PasswordModelValidator());
         }
     }
 }

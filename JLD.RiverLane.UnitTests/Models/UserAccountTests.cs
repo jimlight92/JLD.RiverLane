@@ -14,16 +14,7 @@ namespace JLD.RiverLane.UnitTests.Models
         public void Constructor_UsernameIsNullOrEmpty_Throws(string username)
         {
             // Arrange & Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(username, "any"));
-        }
-
-        [Theory]
-        [InlineData("")]
-        [InlineData(null)]
-        public void Constructor_PasswordIsNullOrEmpty_Throws(string password)
-        {
-            // Arrange & Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new UserAccount("any", password));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(username));
         }
 
         [Fact]
@@ -91,12 +82,15 @@ namespace JLD.RiverLane.UnitTests.Models
                 this.returnedHash = returnedHash;
             }
 
-            protected override IHashProvider GetHashProvider()
+            protected override IHashProvider Provider
             {
-                var provider = new Mock<IHashProvider>();
-                provider.Setup(x => x.GenerateHash(It.IsAny<string>(), It.IsAny<string>())).Returns(returnedHash);
-                provider.Setup(x => x.GenerateHashAndSalt(It.IsAny<string>())).Returns(new HashSaltPair(returnedHash, "salt"));
-                return provider.Object;
+                get
+                {
+                    var provider = new Mock<IHashProvider>();
+                    provider.Setup(x => x.GenerateHash(It.IsAny<string>(), It.IsAny<string>())).Returns(returnedHash);
+                    provider.Setup(x => x.GenerateHashAndSalt(It.IsAny<string>())).Returns(new HashSaltPair(returnedHash, "salt"));
+                    return provider.Object;
+                }
             }
         }
     }

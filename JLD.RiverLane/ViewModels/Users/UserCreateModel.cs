@@ -6,5 +6,7 @@ namespace JLD.RiverLane.ViewModels.Users
     public class UserCreateModel
     {
         public string Username { get; set; }
+
+        public PasswordModel PasswordDetails { get; set; }
     }
 }

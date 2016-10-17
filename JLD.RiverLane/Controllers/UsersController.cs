@@ -1,5 +1,6 @@
 ﻿using JLD.RiverLane.Models;
 using JLD.RiverLane.Services.Users;
+using JLD.RiverLane.ViewModels.Users;
 using System.Web.Mvc;
 
 namespace JLD.RiverLane.Controllers
@@ -18,6 +19,26 @@ namespace JLD.RiverLane.Controllers
         {
             var model = service.Index.Get();
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            var model = service.Create.Get();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create(UserCreateModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model = service.Create.Get(model);
+                return View(model);
+            }
+
+            service.Create.Post(model);
+
+            return RedirectToAction("index");
         }
     }
 }
