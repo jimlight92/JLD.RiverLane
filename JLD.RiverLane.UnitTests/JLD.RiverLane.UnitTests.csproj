@@ -85,10 +85,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UsersControllerTests.cs" />
+    <Compile Include="Models\SettingsTests.cs" />
     <Compile Include="Models\UserAccountTests.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\HashProviderTests.cs" />
+    <Compile Include="Services\Settings\SettingsEditServiceTests.cs" />
     <Compile Include="Services\Users\UserCreateServiceTests.cs" />
     <Compile Include="Services\Users\UsersIndexServiceTests.cs" />
     <Compile Include="Services\Users\UsersServiceTests.cs" />

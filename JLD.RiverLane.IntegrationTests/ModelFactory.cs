@@ -1,4 +1,5 @@
-﻿using JLD.RiverLane.Models;
+﻿using System;
+using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.IntegrationTests
 {
@@ -7,6 +8,24 @@ namespace JLD.RiverLane.IntegrationTests
     /// </summary>
     public class ModelFactory
     {
+        /// <summary>
+        /// Returns a valid address
+        /// </summary>
+        /// <returns></returns>
+        public static Address Address()
+        {
+            return new Address();
+        }
+
+        /// <summary>
+        /// Returns a valid Settings entity
+        /// </summary>
+        /// <returns></returns>
+        public static Settings Settings()
+        {
+            return new Settings("any", "any", Address());
+        }
+
         /// <summary>
         /// Returns a valid user with the given username
         /// </summary>

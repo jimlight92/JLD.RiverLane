@@ -20,6 +20,9 @@ namespace JLD.RiverLane.IntegrationTests
             mapper = config.CreateMapper();
 
             deleter.DeleteAll(Context);
+            seeder.Seed(Context);
+
+            Context.SaveChanges();
         }
 
         protected RiverLaneContext Context
@@ -35,6 +38,11 @@ namespace JLD.RiverLane.IntegrationTests
         private IDatabaseDeleter<RiverLaneContext> deleter
         {
             get { return new DatabaseDeleter(); }
+        }
+
+        private IDatabaseSeeder<RiverLaneContext> seeder
+        {
+            get { return new DatabaseSeeder(); }
         }
 
         public void Dispose()

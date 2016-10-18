@@ -74,9 +74,12 @@
   <ItemGroup>
     <Compile Include="DatabaseTest.cs" />
     <Compile Include="Fixtures\DatabaseDeleter.cs" />
+    <Compile Include="Fixtures\DatabaseSeeder.cs" />
     <Compile Include="Fixtures\IDatabaseDeleter.cs" />
+    <Compile Include="Fixtures\IDatabaseSeeder.cs" />
     <Compile Include="ModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Settings\SettingsEditServiceTests.cs" />
     <Compile Include="Services\Users\UserCreateServiceTests.cs" />
     <Compile Include="Services\Users\UsersIndexServiceTests.cs" />
   </ItemGroup>

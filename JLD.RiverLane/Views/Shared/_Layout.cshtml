@@ -107,13 +107,22 @@
     <div id="body-content">
         <div class="container">
 
-            @if (TempData["style"] != null && TempData["message"] != null)
-            {
-                <div class="alert alert-@TempData["style"]">
-                    <span class="glyphicon glyphicon-exclamation-sign"></span>
-                    @TempData["message"]
-                </div>
+            @{
+                var hidden = " hidden";
             }
+
+            @if (!string.IsNullOrEmpty((string)TempData["message"]))
+            {
+                hidden = "";
+            }
+
+
+            <div id="alert-container" class="alert alert-@TempData["style"] @hidden">
+                <p>
+                    <span id="alert-glyphicon" class="@TempData["icon"]"></span>
+                    <span id="alert-message">@TempData["message"]</span>
+                </p>
+            </div>
 
             @RenderBody()
 
