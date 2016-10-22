@@ -8,6 +8,8 @@ namespace JLD.RiverLane.IntegrationTests.Fixtures
         public void Seed(RiverLaneContext context)
         {
             context.Set<Settings>().Add(ModelFactory.Settings());
+
+            context.SaveChanges();
         }
     }
 }

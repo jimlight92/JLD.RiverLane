@@ -15,7 +15,35 @@ namespace JLD.RiverLane.UnitTests
         where TValidator : IValidator
     {
         protected abstract TValidator Validator { get; }
-        
+
+        /// <summary>
+        /// Returns an empty mock of <see cref="RiverLaneContext"/> 
+        /// </summary>
+        /// <returns></returns>
+        protected RiverLaneContext MockContext()
+        {
+            return new Mock<RiverLaneContext>().Object;
+        }
+
+        /// <summary>
+        /// Returns a mock context factory that returns an empty context 
+        /// </summary>
+        /// <returns></returns>
+        protected Mock<IContextFactory> CreateFactory()
+        {
+            var mockContext = new Mock<RiverLaneContext>();
+            return Factory(mockContext);
+        }
+
+        private static Mock<IContextFactory> Factory(Mock<RiverLaneContext> mockContext)
+        {
+            var mockFactory = new Mock<IContextFactory>();
+            mockFactory.Setup(x => x.CreateContext())
+                .Returns(mockContext.Object);
+
+            return mockFactory;
+        }
+
         /// <summary>
         /// Returns a mock context factory that creates a fake DbSet 
         /// </summary>
@@ -40,12 +68,7 @@ namespace JLD.RiverLane.UnitTests
         {
             var mockContext = new Mock<RiverLaneContext>();
             mockContext.Setup(selector).ReturnsList(returnList);
-
-            var mockFactory = new Mock<IContextFactory>();
-            mockFactory.Setup(x => x.CreateContext())
-                .Returns(mockContext.Object);
-
-            return mockFactory;
+            return Factory(mockContext);
         }
 
         protected TModel ModelWithProperty<TModel>(Action<TModel> setter)

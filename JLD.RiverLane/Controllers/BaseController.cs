@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace JLD.RiverLane.Controllers
 {
+    [RiverLaneAuthorise]
     public class BaseController : Controller
     {
         /// <summary>

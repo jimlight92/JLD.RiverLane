@@ -10,7 +10,7 @@ namespace JLD.RiverLane.UnitTests.ViewModels.Users
         {
             get
             {
-                return new PasswordModelValidator();
+                return new PasswordModelValidator(MockContext());
             }
         }
 

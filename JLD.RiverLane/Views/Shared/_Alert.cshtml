@@ -1,0 +1,16 @@
+﻿@{
+    var hidden = " hidden";
+}
+
+@if (!string.IsNullOrEmpty((string)TempData["message"]))
+            {
+                hidden = "";
+            }
+
+
+<div id="alert-container" class="text-center alert alert-@TempData["style"] @hidden">
+    <p>
+        <span id="alert-glyphicon" class="@TempData["icon"]"></span>
+        <span id="alert-message">@TempData["message"]</span>
+    </p>
+</div>

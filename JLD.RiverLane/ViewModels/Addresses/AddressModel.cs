@@ -1,7 +1,10 @@
-﻿namespace JLD.RiverLane.ViewModels.Addresses
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace JLD.RiverLane.ViewModels.Addresses
 {
     public class AddressModel
     {
+        [Display(Name = "House Name")]
         public string HouseName { get; set; }
 
         public string Street { get; set; }

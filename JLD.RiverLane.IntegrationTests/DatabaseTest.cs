@@ -21,8 +21,6 @@ namespace JLD.RiverLane.IntegrationTests
 
             deleter.DeleteAll(Context);
             seeder.Seed(Context);
-
-            Context.SaveChanges();
         }
 
         protected RiverLaneContext Context

@@ -1,10 +1,15 @@
 ﻿using FluentValidation;
+using JLD.RiverLane.DataAccess;
 
 namespace JLD.RiverLane.ViewModels.Users
 {
     public class PasswordModelValidator : ViewModelValidator<PasswordModel>
     {
-        public PasswordModelValidator()
+        public PasswordModelValidator(RiverLaneContext context) : base(context)
+        {
+        }
+
+        protected override void SetRules(RiverLaneContext context)
         {
             RuleFor(x => x.Password)
                 .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8}.*$")

@@ -1,21 +1,23 @@
 ﻿using FluentValidation;
+using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Infrastructure.FluentValidation;
-using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.ViewModels.Users
 {
     public class UserCreateModelValidator : ViewModelValidator<UserCreateModel>
     {
-        public UserCreateModelValidator(IContextFactory factory)
+        public UserCreateModelValidator(IContextFactory factory) : base(factory)
         {
-            Check.NotNull(factory, nameof(factory));
+        }
 
+        protected override void SetRules(RiverLaneContext context)
+        {
             RuleFor(x => x.Username)
                 .NotEmpty()
                 .Length(1, 50);
-            
+
             RuleFor(x => x.PasswordDetails)
-                .SetValidator(new PasswordModelValidator());
+                .SetValidator(new PasswordModelValidator(context));
         }
     }
 }

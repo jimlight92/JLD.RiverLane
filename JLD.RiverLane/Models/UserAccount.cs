@@ -36,7 +36,7 @@ namespace JLD.RiverLane.Models
         {
             var hash = Provider.GenerateHash(password, PasswordSalt);
 
-            return hash.Equals(PasswordHash);
+            return string.Equals(hash, PasswordHash);
         }
 
         private IHashProvider provider;
@@ -53,10 +53,6 @@ namespace JLD.RiverLane.Models
                 }
 
                 return provider;
-            }
-            set
-            {
-                provider = value;
             }
         }
 

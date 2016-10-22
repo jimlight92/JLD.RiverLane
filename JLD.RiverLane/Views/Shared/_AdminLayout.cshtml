@@ -8,7 +8,6 @@
 
     <title>@ViewBag.Title - River Lane Photography</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <script type="text/javascript">
@@ -17,7 +16,6 @@
 </head>
 
 <body>
-
 
     <header>
 
@@ -51,8 +49,14 @@
                                 <li>@Html.ActionLink("Recommends", "index", "recommends")</li>
                             </ul>
                         </li>
-
-                        <li>@Html.ActionLink("My Details", "contact", "home")</li>
+                        
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Settings", "edit", "settings")</li>
+                                <li>@Html.ActionLink("Users", "index", "users")</li>
+                            </ul>
+                        </li>
 
 
                     </ul>
@@ -71,18 +75,13 @@
 
     <div class="container">
 
-        @if (TempData["style"] != null && TempData["message"] != null)
-        {
-            <div class="alert alert-@TempData["style"]">
-                <span class="glyphicon glyphicon-exclamation-sign"></span>
-                @TempData["message"]
-            </div>
-        }
+        @Html.Partial("_Alert")
 
         @RenderBody()
 
+        <div class="clearfix"></div>
         <hr />
-        <footer>
+        <footer class="text-center">
             <p><span class="normal-font">&copy;</span> 2016 - Jim Light Development</p>
         </footer>
     </div>

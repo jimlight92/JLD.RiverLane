@@ -9,7 +9,7 @@ namespace JLD.RiverLane.Models.Enums
         [Glyphicon("ok-circle")]
         Success,
         [Description("info")]
-        [Glyphicon("exclamation-sign")]
+        [Glyphicon("info-sign")]
         Info,
         [Description("warning")]
         [Glyphicon("warning-sign")]

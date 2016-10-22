@@ -16,6 +16,8 @@ namespace JLD.RiverLane.IntegrationTests.Fixtures
         public void DeleteAll(RiverLaneContext context)
         {
             DeleteAll<UserAccount>(context);
+            DeleteAll<Settings>(context);
+            DeleteAll<Address>(context);
 
             context.SaveChanges();
         }

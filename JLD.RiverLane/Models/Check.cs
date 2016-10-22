@@ -47,11 +47,11 @@ namespace JLD.RiverLane.Models
         /// <param name="value"></param>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static bool NotNullOrMinValue(DateTime value, string name)
+        public static bool NotMinValue(DateTime value, string name)
         {
-            if (value == null || value == DateTime.MinValue)
+            if (value == DateTime.MinValue)
             {
-                throw new ArgumentNullException(name);
+                throw new ArgumentOutOfRangeException(name);
             }
 
             return true;

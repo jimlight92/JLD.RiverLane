@@ -2,7 +2,6 @@
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.Infrastructure;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using WebGrease.Css.Extensions;
 
 namespace JLD.RiverLane.DataAccess.Conventions
 {
@@ -23,7 +22,7 @@ namespace JLD.RiverLane.DataAccess.Conventions
             {
                 if (!string.Equals(property.Name, property.Name.ToUpperInvariant(), StringComparison.Ordinal))
                 {
-                    var newPropertyName = GetUpperCaseSplit(property.Name);
+                    var newPropertyName = GetUpperCaseSplit(property.Name.Replace("_", ""));
                     property.Name = newPropertyName;
                 }
             }

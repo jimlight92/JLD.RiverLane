@@ -20,8 +20,9 @@ namespace JLD.RiverLane.DataAccess
         /// </summary>
         public virtual Settings Settings
         {
-            get { return Set<Settings>().Single(); }
+            get { return SettingsSet.Single(); }
         }
+        public virtual DbSet<Settings> SettingsSet { get; set; }
 
         /// <summary>
         /// Retrieves all users in from the database

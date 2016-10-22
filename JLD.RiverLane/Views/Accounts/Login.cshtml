@@ -1,0 +1,62 @@
+﻿@model JLD.RiverLane.ViewModels.Accounts.LoginModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Login Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - River Lane Photography</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+
+        <div class="text-center">
+            <img src="~/Content/Images/RiverLaneNarrowBanner.jpg.jpg" />
+        </div>
+
+        <div class="row">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary("", new { @class = "alert alert-danger" })
+
+                <div id="login-panel" class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+
+                                @Html.LabelFor(model => model.Username, new { @class = "control-label col-sm-2 required" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                @Html.LabelFor(model => model.Password, new { @class = "control-label col-sm-2 required" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <input type="submit" value="Log In" class="btn btn-primary pull-right" />
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</body>
+</html>

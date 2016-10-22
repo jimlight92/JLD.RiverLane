@@ -11,7 +11,7 @@ namespace JLD.RiverLane.IntegrationTests.Services.Users
         public void Get_UserExists_ReturnsUserInList()
         {
             // Arrange
-            var user = ModelFactory.User("username");
+            var user = ModelFactory.User("name");
             Context.Users.Add(user);
             Context.SaveChanges();
 
@@ -21,7 +21,7 @@ namespace JLD.RiverLane.IntegrationTests.Services.Users
             var result = sut.Get();
 
             // Assert
-            Assert.Equal("username", result.Users.Single().Username);
+            Assert.Equal("name", result.Users.Single().Username);
         }
 
         private UsersIndexService GetSut()

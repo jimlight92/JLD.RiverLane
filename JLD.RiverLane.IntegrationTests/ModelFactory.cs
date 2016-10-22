@@ -33,7 +33,9 @@ namespace JLD.RiverLane.IntegrationTests
         /// <returns></returns>
         public static UserAccount User(string username)
         {
-            return new UserAccount(username);
+            var user = new UserAccount(username);
+            user.ChangePassword("password");
+            return user;
         }
     }
 }

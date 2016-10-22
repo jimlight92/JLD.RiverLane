@@ -17,7 +17,7 @@ namespace JLD.RiverLane.IntegrationTests.Services.Users
             var result = sut.Get();
 
             // Assert
-            Assert.Equal(new UserCreateModel(), result);
+            Assert.IsType<UserCreateModel>(result);
         }
 
         private UserCreateService GetSut()

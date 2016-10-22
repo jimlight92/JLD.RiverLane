@@ -5,6 +5,13 @@ namespace JLD.RiverLane.Models
     public class Settings : Entity
     {
         /// <summary>
+        /// Allows EF to intialise a new instance of the <see cref="Settings"/> class
+        /// </summary>
+        protected Settings()
+        {
+        }
+
+        /// <summary>
         /// Initialises a new instance of the <see cref="Settings"/> entity with the required fields
         /// </summary>
         /// <param name="contactEmail"></param>

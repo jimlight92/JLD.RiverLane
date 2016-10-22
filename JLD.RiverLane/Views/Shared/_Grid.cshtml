@@ -6,7 +6,7 @@
 @if (!Model.ItemsToDisplay.Any())
 {
     <div class="alert alert-info">
-        <span class="glyphicon glyphicon-info-sign">&nbsp;@Model.EmptyGridText</span>
+        <span class="glyphicon glyphicon-info-sign"></span>&nbsp;@Model.EmptyGridText
     </div>
 }
 else if (Model.RenderOptions.RenderRowsOnly)

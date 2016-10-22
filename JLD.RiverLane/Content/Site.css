@@ -176,6 +176,22 @@ header {
     color: #fff;
 }
 
+/* Panels */
+.panel {
+    margin-top: 5%;
+    background-color: black;
+}
+
+.panel-default > .panel-heading {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+}
+
+.panel-footer {
+    background-color: black;
+}
+
 /* Jumbotron stuff */
 
 .jumbotron {
@@ -266,7 +282,15 @@ h3, .h3 {
 }
 
 .alert {
-    margin: 0 15px;
+    text-align: center;
+}
+
+.alert-success {
+    border: 1px solid #067e05;
+}
+
+.alert-info {
+    border: 1px solid #0a6ef8;
 }
 
 .alert-danger {
@@ -315,6 +339,11 @@ select::-ms-expand {
 
 .datepicker {
     z-index: 1200 !important;
+}
+
+.control-label {
+    color: white;
+    font-weight: 500;
 }
 
 
@@ -437,7 +466,6 @@ h3 > small {
 }
 
 /* VALIDATION */
-
 .validation-summary-valid {
     display: none;
 }
