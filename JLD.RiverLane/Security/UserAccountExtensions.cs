@@ -1,9 +1,7 @@
 ﻿using System.Linq;
 using System.Security.Principal;
 using BaseClasses.Fixtures;
-using BaseClasses.Helpers;
 using BaseClasses.Models;
-using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.Security
 {

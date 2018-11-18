@@ -6,7 +6,7 @@ namespace JLD.RiverLane.Models
     public class ExtraPoint : Entity
     {
         /// <summary>
-        /// Allows EF to intialise a new instance of the <see cref="PricePoint"/> class
+        /// Allows EF to intialise a new instance of the <see cref="ExtraPoint"/> class
         /// </summary>
         protected ExtraPoint() { }
 

@@ -196,7 +196,7 @@
     <Compile Include="Infrastructure\Ninject\ValidatorModule.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\ContactMessage.cs" />
+    <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Enums\AlertType.cs" />
     <Compile Include="Models\Enums\LocationType.cs" />
     <Compile Include="Models\Enums\PackageType.cs" />
