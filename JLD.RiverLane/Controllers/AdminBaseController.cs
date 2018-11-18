@@ -1,4 +1,4 @@
-﻿using JLD.RiverLane.Infrastructure.Attributes;
+﻿using JLD.RiverLane.Infrastructure.Attributes.Authorisation;
 
 namespace JLD.RiverLane.Controllers
 {

@@ -2,6 +2,8 @@
 using JLD.RiverLane.Models.Enums;
 using System.ComponentModel;
 using System.Web.Mvc;
+using BaseClasses.Helpers;
+using JLD.RiverLane.Infrastructure.Attributes.Authorisation;
 
 namespace JLD.RiverLane.Controllers
 {
@@ -21,6 +23,7 @@ namespace JLD.RiverLane.Controllers
         /// Returns a JSON response that redirects to a specified action with a specified route values
         /// </summary>
         /// <param name="actionName">The action to redirect to.</param>
+        /// <param name="routeValues"></param>
         protected JsonResult JsonRedirect(string actionName, object routeValues)
         {
             return Json(new { url = Url.Action(actionName, routeValues), success = true });
@@ -33,8 +36,8 @@ namespace JLD.RiverLane.Controllers
         /// <param name="message">The message to display</param>
         protected void RaiseAlert(AlertType alertType, string message)
         {
-            var style = alertType.GetAttribute<DescriptionAttribute>().Description;
-            var glyphicon = alertType.GetAttribute<GlyphiconAttribute>().Glyphicon;
+            var style = alertType.GetCustomAttribute<DescriptionAttribute>().Description;
+            var glyphicon = alertType.GetCustomAttribute<GlyphiconAttribute>().Glyphicon;
 
             TempData["style"] = style;
             TempData["message"] = message;

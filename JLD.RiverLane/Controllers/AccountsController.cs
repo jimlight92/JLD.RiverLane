@@ -1,7 +1,4 @@
-﻿using JLD.RiverLane.Infrastructure.Attributes;
-using JLD.RiverLane.Models;
-using JLD.RiverLane.Models.Enums;
-using JLD.RiverLane.Services.Accounts;
+﻿using JLD.RiverLane.Services.Accounts;
 using JLD.RiverLane.ViewModels.Accounts;
 using System.Web.Mvc;
 using BaseClasses.Fixtures;
@@ -48,7 +45,7 @@ namespace JLD.RiverLane.Controllers
 
             if (loginResult != AuthenticationResult.Success)
             {
-                ModelState.AddModelError("", loginResult.GetAttribute<MessageAttribute>().Message);
+                ModelState.AddModelError("", loginResult.GetCustomAttribute<MessageAttribute>().Message);
                 return View(model);
             }
 
