@@ -1,10 +1,8 @@
-﻿using JLD.RiverLane.Models;
-using JLD.RiverLane.Models.Enums;
+﻿using JLD.RiverLane.Models.Enums;
 using JLD.RiverLane.Services.Settings;
 using JLD.RiverLane.ViewModels.Settings;
 using System.Web.Mvc;
 using BaseClasses.Fixtures;
-using BaseClasses.Helpers;
 
 namespace JLD.RiverLane.Controllers
 {
