@@ -171,6 +171,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DataAccess\Configuration\SettingsConfiguration.cs" />
@@ -229,9 +230,13 @@
     <Compile Include="ViewModels\Addresses\AddressModel.cs" />
     <Compile Include="ViewModels\Addresses\AddressModelValidator.cs" />
     <Compile Include="ViewModels\Addresses\AddressProfile.cs" />
+    <Compile Include="ViewModels\Home\HomeIndexModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsEditModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsEditModelValidator.cs" />
     <Compile Include="ViewModels\Settings\SettingsProfile.cs" />
+    <Compile Include="ViewModels\Shared\LayoutModel.cs" />
+    <Compile Include="ViewModels\Shared\Slide.cs" />
+    <Compile Include="ViewModels\Shared\SlideshowGroupType.cs" />
     <Compile Include="ViewModels\Users\PasswordModel.cs" />
     <Compile Include="ViewModels\Users\PasswordModelValidator.cs" />
     <Compile Include="ViewModels\Users\UserProfile.cs" />
@@ -245,6 +250,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Gridmvc.css" />
+    <Content Include="Content\Images\Main\1.jpg" />
+    <Content Include="Content\Images\Main\2.jpg" />
+    <Content Include="Content\Images\Main\3.jpg" />
+    <Content Include="Content\Images\Main\4.jpg" />
+    <Content Include="Content\Images\Main\5.jpg" />
+    <Content Include="Content\Images\Main\6.jpg" />
+    <Content Include="Content\Images\Main\7.jpg" />
+    <Content Include="Content\Images\Main\8.jpg" />
+    <Content Include="Content\Images\RiverLaneNarrowBanner.jpg.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -313,6 +327,7 @@
       <Name>BaseClasses</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

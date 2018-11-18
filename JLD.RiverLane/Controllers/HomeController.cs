@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using JLD.RiverLane.ViewModels.Home;
 
 namespace JLD.RiverLane.Controllers
 {
@@ -6,7 +7,7 @@ namespace JLD.RiverLane.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(new HomeIndexModel());
         }
     }
 }

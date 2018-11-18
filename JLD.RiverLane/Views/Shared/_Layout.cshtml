@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using System.Activities.Statements
+@model JLD.RiverLane.ViewModels.Shared.LayoutModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -40,9 +43,6 @@
 
 
     <header>
-
-        <div class="hidden" id="HiddenImages">
-        </div>
 
         <nav class="navbar navbar-inverse">
 
@@ -94,13 +94,21 @@
 
         </nav>
 
-
-        <div id="slideshow">
-        </div>
-
     </header>
 
     <div id="body-content">
+
+        <div id="slideshow">
+            @{
+                for (var idx = 0; idx < Model.Slides.Length; idx++)
+                {
+                    <img class="slideshow-img"
+                         src="@Url.Action("download", "images", new { filename = Model.Slides[idx].FileName, folder = Model.Slides[idx].SlideshowGroup})"
+                         alt="slideshow" />
+                }
+            }
+        </div>
+
         <div class="container">
 
             @Html.Partial("_Alert")
