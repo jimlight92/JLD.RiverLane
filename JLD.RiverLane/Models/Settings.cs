@@ -1,4 +1,7 @@
 ﻿using System;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.Models
 {

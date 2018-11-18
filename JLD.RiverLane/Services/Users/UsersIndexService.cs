@@ -3,6 +3,8 @@ using JLD.RiverLane.ViewModels.Users;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 using AutoMapper;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
 
 namespace JLD.RiverLane.Services.Users
 {

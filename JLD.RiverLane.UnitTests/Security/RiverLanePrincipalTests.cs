@@ -1,6 +1,6 @@
-﻿using JLD.RiverLane.Models;
-using JLD.RiverLane.Security;
+﻿using JLD.RiverLane.Security;
 using System;
+using BaseClasses.Models;
 using Xunit;
 
 namespace JLD.RiverLane.UnitTests.Security

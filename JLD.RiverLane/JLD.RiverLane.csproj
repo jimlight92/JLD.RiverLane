@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,12 +174,6 @@
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DataAccess\Configuration\SettingsConfiguration.cs" />
-    <Compile Include="DataAccess\Conventions\ColumnNameConvention.cs" />
-    <Compile Include="DataAccess\Conventions\ForeignKeyConvention.cs" />
-    <Compile Include="DataAccess\Conventions\PrimaryKeyConvention.cs" />
-    <Compile Include="DataAccess\Conventions\TableNameConvention.cs" />
-    <Compile Include="DataAccess\Conventions\UpperCaseSplitConvention.cs" />
-    <Compile Include="DataAccess\DropCreateDatabaseTables.cs" />
     <Compile Include="DataAccess\RiverLaneContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -187,7 +182,6 @@
     <Compile Include="Infrastructure\Attributes\AuthorizeRequestAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\FontAwesomeClassAttribute.cs" />
     <Compile Include="Infrastructure\Attributes\GlyphiconAttribute.cs" />
-    <Compile Include="Infrastructure\Attributes\MessageAttribute.cs" />
     <Compile Include="Infrastructure\FluentValidation\ContextFactory.cs" />
     <Compile Include="Infrastructure\FluentValidation\CustomValidatorExtensions.cs" />
     <Compile Include="Infrastructure\FluentValidation\IContextFactory.cs" />
@@ -200,28 +194,12 @@
     <Compile Include="Infrastructure\Ninject\ControllerModules\UsersModule.cs" />
     <Compile Include="Infrastructure\Ninject\DbContextModule.cs" />
     <Compile Include="Infrastructure\Ninject\ValidatorModule.cs" />
-    <Compile Include="Infrastructure\Settings.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />
-    <Compile Include="Infrastructure\SiteSettings.cs" />
-    <Compile Include="Infrastructure\WebConfigSettingsSection.cs" />
     <Compile Include="Models\Address.cs" />
-    <Compile Include="Models\Check.cs" />
-    <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Enums\AlertType.cs" />
     <Compile Include="Models\Enums\EnumExtensions.cs" />
     <Compile Include="Models\Settings.cs" />
-    <Compile Include="Models\SystemTimeProvider.cs" />
-    <Compile Include="Models\TimeProvider.cs" />
-    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\AuthenticationResult.cs" />
-    <Compile Include="Security\FormsAuthenticationProvider.cs" />
-    <Compile Include="Security\FormsAuthenticationTokenProvider.cs" />
-    <Compile Include="Security\HashProvider.cs" />
-    <Compile Include="Security\HashSaltPair.cs" />
-    <Compile Include="Security\IAuthenticationProvider.cs" />
-    <Compile Include="Security\IHashProvider.cs" />
-    <Compile Include="Security\ITokenProvider.cs" />
     <Compile Include="Security\RiverLaneFormsAuthenticationProvider.cs" />
     <Compile Include="Security\RiverLaneFormsTokenProvider.cs" />
     <Compile Include="Security\RiverLaneIdentity.cs" />
@@ -318,15 +296,18 @@
     <Content Include="Views\Shared\_Alert.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\JimLight\Dropbox\Projects\BaseClasses\BaseClasses\BaseClasses.csproj">
+      <Project>{59d8cdd7-38bf-4350-aaa1-45f446fbd274}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

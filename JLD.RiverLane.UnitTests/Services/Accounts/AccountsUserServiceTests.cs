@@ -1,7 +1,7 @@
-﻿using JLD.RiverLane.Security;
-using JLD.RiverLane.Services.Accounts;
+﻿using JLD.RiverLane.Services.Accounts;
 using Moq;
 using System;
+using BaseClasses.Security;
 using Xunit;
 
 namespace JLD.RiverLane.UnitTests.Services.Accounts

@@ -4,6 +4,7 @@ using Moq.Language.Flow;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.UnitTests
 {

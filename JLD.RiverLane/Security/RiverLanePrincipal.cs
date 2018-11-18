@@ -1,5 +1,8 @@
 ﻿using JLD.RiverLane.Models;
 using System.Security.Principal;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.Security
 {

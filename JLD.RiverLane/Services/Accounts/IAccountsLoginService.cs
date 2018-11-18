@@ -1,4 +1,5 @@
-﻿using JLD.RiverLane.Security;
+﻿using BaseClasses.Security;
+using JLD.RiverLane.Security;
 using JLD.RiverLane.ViewModels.Accounts;
 
 namespace JLD.RiverLane.Services.Accounts

@@ -19,13 +19,11 @@
 
     <title>@ViewBag.Title - River Lane Photography</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <script type="text/javascript">
         var rootUrl = '@Url.Content("~")';
-        var bannerFolder = "@Model.BannerFolder";
-        var numberOfImages = @Model.NumberOfImages;
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-21343027-2']);

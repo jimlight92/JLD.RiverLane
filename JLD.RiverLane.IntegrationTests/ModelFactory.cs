@@ -1,4 +1,5 @@
 ﻿using System;
+using BaseClasses.Models;
 using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.IntegrationTests

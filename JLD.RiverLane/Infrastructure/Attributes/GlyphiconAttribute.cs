@@ -1,5 +1,7 @@
 ﻿using JLD.RiverLane.Models;
 using System;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
 
 namespace JLD.RiverLane.Infrastructure.Attributes
 {

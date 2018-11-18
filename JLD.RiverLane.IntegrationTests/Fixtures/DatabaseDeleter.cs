@@ -1,6 +1,7 @@
 ﻿using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 using System.Data.Entity;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.IntegrationTests.Fixtures
 {

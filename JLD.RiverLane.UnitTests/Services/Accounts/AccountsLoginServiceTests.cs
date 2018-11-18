@@ -1,7 +1,7 @@
 ﻿using JLD.RiverLane.Services.Accounts;
 using System;
+using BaseClasses.Security;
 using Xunit;
-using JLD.RiverLane.Security;
 using JLD.RiverLane.DataAccess;
 using Moq;
 

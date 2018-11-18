@@ -1,6 +1,7 @@
 ﻿using Moq;
 using System;
 using System.Security.Principal;
+using BaseClasses.Models;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 using JLD.RiverLane.Security;

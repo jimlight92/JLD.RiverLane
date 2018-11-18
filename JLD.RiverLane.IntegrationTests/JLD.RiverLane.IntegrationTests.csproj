@@ -97,6 +97,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\JimLight\Dropbox\Projects\BaseClasses\BaseClasses\BaseClasses.csproj">
+      <Project>{59d8cdd7-38bf-4350-aaa1-45f446fbd274}</Project>
+      <Name>BaseClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JLD.RiverLane\JLD.RiverLane.csproj">
       <Project>{4795D00D-CA82-4A91-8299-57E5C7A558E8}</Project>
       <Name>JLD.RiverLane</Name>

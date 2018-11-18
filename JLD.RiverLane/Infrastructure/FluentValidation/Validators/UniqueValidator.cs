@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.Infrastructure.FluentValidation.Validators
 {

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 using JLD.RiverLane.ViewModels.Settings;

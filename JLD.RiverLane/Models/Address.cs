@@ -1,4 +1,6 @@
-﻿namespace JLD.RiverLane.Models
+﻿using BaseClasses.Models;
+
+namespace JLD.RiverLane.Models
 {
     public class Address : Entity
     {

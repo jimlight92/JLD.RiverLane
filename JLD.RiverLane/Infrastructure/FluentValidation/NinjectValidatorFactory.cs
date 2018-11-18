@@ -3,6 +3,8 @@ using JLD.RiverLane.Models;
 using Ninject;
 using System;
 using System.Linq;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
 
 namespace JLD.RiverLane.Infrastructure.FluentValidation
 {

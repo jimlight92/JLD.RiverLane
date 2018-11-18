@@ -1,4 +1,8 @@
 ﻿using System.Security.Principal;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
+using BaseClasses.Models;
+using BaseClasses.Security;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Models;
 

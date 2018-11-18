@@ -1,4 +1,5 @@
-﻿using JLD.RiverLane.Models;
+﻿using BaseClasses.Models;
+using JLD.RiverLane.Models;
 using JLD.RiverLane.ViewModels.Users;
 
 namespace JLD.RiverLane.Services.Users

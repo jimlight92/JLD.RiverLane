@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
+using FluentValidation;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Infrastructure.FluentValidation;
 using JLD.RiverLane.Models;

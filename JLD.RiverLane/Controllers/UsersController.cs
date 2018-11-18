@@ -2,6 +2,8 @@
 using JLD.RiverLane.Services.Users;
 using JLD.RiverLane.ViewModels.Users;
 using System.Web.Mvc;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
 
 namespace JLD.RiverLane.Controllers
 {

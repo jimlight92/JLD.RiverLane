@@ -4,6 +4,10 @@ using JLD.RiverLane.Models.Enums;
 using JLD.RiverLane.Services.Accounts;
 using JLD.RiverLane.ViewModels.Accounts;
 using System.Web.Mvc;
+using BaseClasses.Fixtures;
+using BaseClasses.Helpers;
+using BaseClasses.Infrastructure.Attributes;
+using BaseClasses.Security;
 
 namespace JLD.RiverLane.Controllers
 {
@@ -42,7 +46,7 @@ namespace JLD.RiverLane.Controllers
         {
             var loginResult = service.Index.Post(model);
 
-            if (loginResult != Security.AuthenticationResult.Success)
+            if (loginResult != AuthenticationResult.Success)
             {
                 ModelState.AddModelError("", loginResult.GetAttribute<MessageAttribute>().Message);
                 return View(model);

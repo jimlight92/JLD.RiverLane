@@ -1,8 +1,9 @@
-﻿using JLD.RiverLane.DataAccess.Conventions;
-using JLD.RiverLane.Models;
+﻿using JLD.RiverLane.Models;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using BaseClasses.DataAccess.Conventions;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.DataAccess
 {
@@ -10,7 +11,6 @@ namespace JLD.RiverLane.DataAccess
     {
 
         public RiverLaneContext()
-            : base()
         {
             Database.SetInitializer<RiverLaneContext>(null);
         }
@@ -18,10 +18,8 @@ namespace JLD.RiverLane.DataAccess
         /// <summary>
         /// Retrieves the single Settings row from the database
         /// </summary>
-        public virtual Settings Settings
-        {
-            get { return SettingsSet.Single(); }
-        }
+        public virtual Settings Settings => SettingsSet.Single();
+
         public virtual DbSet<Settings> SettingsSet { get; set; }
 
         /// <summary>

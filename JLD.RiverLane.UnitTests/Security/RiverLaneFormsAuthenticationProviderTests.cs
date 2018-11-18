@@ -1,5 +1,7 @@
 ﻿using Moq;
 using System;
+using BaseClasses.Models;
+using BaseClasses.Security;
 using JLD.RiverLane.DataAccess;
 using JLD.RiverLane.Security;
 using Xunit;

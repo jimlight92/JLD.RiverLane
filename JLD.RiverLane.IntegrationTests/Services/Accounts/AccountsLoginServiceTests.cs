@@ -1,4 +1,4 @@
-﻿using JLD.RiverLane.Security;
+﻿using BaseClasses.Security;
 using JLD.RiverLane.Services.Accounts;
 using JLD.RiverLane.ViewModels.Accounts;
 using Moq;

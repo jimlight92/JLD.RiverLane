@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
 using JLD.RiverLane.Infrastructure.FluentValidation.Validators;
-using JLD.RiverLane.Models;
 using System;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using System.Reflection;
+using BaseClasses.Fixtures;
+using BaseClasses.Models;
 
 namespace JLD.RiverLane.Infrastructure.FluentValidation
 {
