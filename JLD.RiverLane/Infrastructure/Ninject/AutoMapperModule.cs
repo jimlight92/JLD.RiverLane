@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Ninject.Modules;
 using Ninject.Web.Common;
-using System.Reflection;
 
 namespace JLD.RiverLane.Infrastructure.Ninject
 {
@@ -14,9 +13,9 @@ namespace JLD.RiverLane.Infrastructure.Ninject
                 .InRequestScope();
         }
 
-        private IMapper CreateMapper()
+        private static IMapper CreateMapper()
         {
-            var config = new MapperConfiguration(cfg => AutoMapperConfig.Configure(cfg));
+            var config = new MapperConfiguration(AutoMapperConfig.Configure);
 
             return config.CreateMapper();
         }

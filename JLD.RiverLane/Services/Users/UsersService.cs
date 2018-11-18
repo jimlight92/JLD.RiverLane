@@ -1,31 +1,20 @@
 ﻿using BaseClasses.Fixtures;
-using BaseClasses.Helpers;
-using JLD.RiverLane.Models;
 
 namespace JLD.RiverLane.Services.Users
 {
     public class UsersService : IUsersService
     {
-        private readonly IUsersIndexService index;
-        private readonly IUserCreateService create;
-
         public UsersService(IUsersIndexService index, IUserCreateService create)
         {
             Check.NotNull(index, nameof(index));
             Check.NotNull(create, nameof(create));
 
-            this.index = index;
-            this.create = create;
+            Index = index;
+            Create = create;
         }
 
-        public IUsersIndexService Index
-        {
-            get { return index; }
-        }
+        public IUsersIndexService Index { get; }
 
-        public IUserCreateService Create
-        {
-            get { return create; }
-        }
+        public IUserCreateService Create { get; }
     }
 }

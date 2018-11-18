@@ -1,4 +1,5 @@
 ﻿@using System.Activities.Statements
+@using JLD.RiverLane.ViewModels.Shared
 @model JLD.RiverLane.ViewModels.Shared.LayoutModel
 
 <!DOCTYPE html>
@@ -99,14 +100,14 @@
     <div id="body-content">
 
         <div id="slideshow">
-            @{
-                for (var idx = 0; idx < Model.Slides.Length; idx++)
-                {
-                    <img class="slideshow-img"
-                         src="@Url.Action("download", "images", new { filename = Model.Slides[idx].FileName, folder = Model.Slides[idx].SlideshowGroup})"
-                         alt="slideshow" />
-                }
+
+            @foreach (var slide in Model.Slides)
+            {
+                <img class="slideshow-img"
+                     src="@Url.Action("download", "images", new { filename = slide.FileName, folder = slide.SlideshowGroup})"
+                     alt="slideshow" />
             }
+
         </div>
 
         <div class="container">

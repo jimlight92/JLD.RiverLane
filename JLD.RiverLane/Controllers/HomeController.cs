@@ -1,13 +1,22 @@
 ﻿using System.Web.Mvc;
-using JLD.RiverLane.ViewModels.Home;
+using BaseClasses.Fixtures;
+using JLD.RiverLane.Services.Home;
 
 namespace JLD.RiverLane.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        private readonly IHomeService service;
+
+        public HomeController(IHomeService service)
+        {
+            Check.NotNull(service, nameof(service));
+            this.service = service;
+        }
+
         public ActionResult Index()
         {
-            return View(new HomeIndexModel());
+            return View(service.Index.Get());
         }
     }
 }

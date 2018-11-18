@@ -192,8 +192,10 @@
     <Compile Include="Infrastructure\Ninject\ContextFactoryModule.cs" />
     <Compile Include="Infrastructure\Ninject\ControllerModules\AccountsModule.cs" />
     <Compile Include="Infrastructure\Ninject\ControllerModules\SettingsModule.cs" />
+    <Compile Include="Infrastructure\Ninject\ControllerModules\HomeModule.cs" />
     <Compile Include="Infrastructure\Ninject\ControllerModules\UsersModule.cs" />
     <Compile Include="Infrastructure\Ninject\DbContextModule.cs" />
+    <Compile Include="Infrastructure\Ninject\SharedModule.cs" />
     <Compile Include="Infrastructure\Ninject\ValidatorModule.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />
     <Compile Include="Models\Address.cs" />
@@ -216,10 +218,16 @@
     <Compile Include="Services\Accounts\IAccountsLoginService.cs" />
     <Compile Include="Services\Accounts\IAccountsService.cs" />
     <Compile Include="Services\Accounts\IAccountsUserService.cs" />
+    <Compile Include="Services\Home\HomeIndexService.cs" />
+    <Compile Include="Services\Home\HomeService.cs" />
+    <Compile Include="Services\Home\IHomeIndexService.cs" />
+    <Compile Include="Services\Home\IHomeService.cs" />
+    <Compile Include="Services\ISlideshowResolver.cs" />
     <Compile Include="Services\Settings\ISettingsEditService.cs" />
     <Compile Include="Services\Settings\ISettingsService.cs" />
     <Compile Include="Services\Settings\SettingsEditService.cs" />
     <Compile Include="Services\Settings\SettingsService.cs" />
+    <Compile Include="Services\SlideshowResolver.cs" />
     <Compile Include="Services\Users\IUserCreateService.cs" />
     <Compile Include="Services\Users\IUsersIndexService.cs" />
     <Compile Include="Services\Users\IUsersService.cs" />

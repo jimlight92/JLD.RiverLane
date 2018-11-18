@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Controllers\SettingsControllerTests.cs" />
     <Compile Include="Controllers\UsersControllerTests.cs" />
+    <Compile Include="Home\HomeIndexServiceTests.cs" />
     <Compile Include="Models\SettingsTests.cs" />
     <Compile Include="MoqExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
