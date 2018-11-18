@@ -2,8 +2,8 @@
 using System;
 using System.Security.Principal;
 using BaseClasses.Models;
+using BaseClasses.Security;
 using JLD.RiverLane.DataAccess;
-using JLD.RiverLane.Models;
 using JLD.RiverLane.Security;
 using Xunit;
 
@@ -45,7 +45,7 @@ namespace JLD.RiverLane.UnitTests.Security
             var result = sut.GetPrincipalFromUserAccountExposed(user);
 
             // Assert
-            Assert.True(result is RiverLanePrincipal);
+            Assert.True(result is JLDPrincipal);
         }
 
         private class TestableFormsTokenProvider : RiverLaneFormsTokenProvider

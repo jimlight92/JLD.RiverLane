@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Mvc;
+using BaseClasses.Security;
 
 namespace JLD.RiverLane.Infrastructure.Attributes.Authorisation
 {
@@ -9,7 +10,7 @@ namespace JLD.RiverLane.Infrastructure.Attributes.Authorisation
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            return httpContext.User is Security.RiverLanePrincipal;
+            return httpContext.User is JLDPrincipal;
         }
     }
 }

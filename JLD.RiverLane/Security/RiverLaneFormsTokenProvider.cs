@@ -27,10 +27,9 @@ namespace JLD.RiverLane.Security
 
         protected override IPrincipal GetPrincipalFromUserAccount(UserAccount userAccount)
         {
-            var user = userAccount as UserAccount;
-            Check.NotNull(user, nameof(user));
+            Check.NotNull(userAccount, nameof(userAccount));
 
-            return new RiverLanePrincipal(user);
+            return new JLDPrincipal(userAccount);
         }
 
         protected override UserAccount GetUserAccount(string userName)

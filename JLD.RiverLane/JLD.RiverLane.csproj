@@ -209,9 +209,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\RiverLaneFormsAuthenticationProvider.cs" />
     <Compile Include="Security\RiverLaneFormsTokenProvider.cs" />
-    <Compile Include="Security\RiverLaneIdentity.cs" />
-    <Compile Include="Security\RiverLanePrincipal.cs" />
-    <Compile Include="Security\UserAccountExtensions.cs" />
     <Compile Include="Services\Accounts\AccountsLoginService.cs" />
     <Compile Include="Services\Accounts\AccountsService.cs" />
     <Compile Include="Services\Accounts\AccountsUserService.cs" />
