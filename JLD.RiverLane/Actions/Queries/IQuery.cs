@@ -1,8 +1,10 @@
-﻿namespace JLD.RiverLane.Actions.Queries
+﻿using System.Threading.Tasks;
+
+namespace JLD.RiverLane.Actions.Queries
 {
     public interface IQuery<in TIn, TOut>
     {
-        ResultWrapper<TOut> Execute(TIn model);
+        Task<ResultWrapper<TOut>> ExecuteAsync(TIn model);
     }
 
     public interface IQuery<TOut> : IQuery<Unit, TOut>

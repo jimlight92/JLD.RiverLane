@@ -8,7 +8,7 @@ using BaseClasses.Security;
 
 namespace JLD.RiverLane.Controllers
 {
-    public class AccountsController : Controller
+    public class AccountsController : BaseController
     {
         private readonly IAccountsService service;
 

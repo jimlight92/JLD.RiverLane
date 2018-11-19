@@ -1,22 +1,27 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading.Tasks;
+using System.Web.Mvc;
 using BaseClasses.Fixtures;
-using JLD.RiverLane.Services.Home;
+using JLD.RiverLane.Actions;
+using JLD.RiverLane.Actions.Queries;
+using JLD.RiverLane.ViewModels.Home;
 
 namespace JLD.RiverLane.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly IHomeService service;
+        private readonly IQuery<HomeIndexModel> query;
 
-        public HomeController(IHomeService service)
+        public HomeController(IQuery<HomeIndexModel> query)
         {
-            Check.NotNull(service, nameof(service));
-            this.service = service;
+            Check.NotNull(query, nameof(query));
+            this.query = query;
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(service.Index.Get());
+            var result = await query.ExecuteAsync(Unit.Default);
+
+            return View(result);
         }
     }
 }

@@ -163,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\Commands\ICommand.cs" />
+    <Compile Include="Actions\Queries\Home\HomeIndexQuery.cs" />
     <Compile Include="Actions\Queries\IQuery.cs" />
     <Compile Include="Actions\ResultType.cs" />
     <Compile Include="Actions\ResultWrapper.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Infrastructure\Ninject\ControllerModules\HomeModule.cs" />
     <Compile Include="Infrastructure\Ninject\ControllerModules\UsersModule.cs" />
     <Compile Include="Infrastructure\Ninject\DbContextModule.cs" />
+    <Compile Include="Infrastructure\Ninject\ActionModule.cs" />
     <Compile Include="Infrastructure\Ninject\SharedModule.cs" />
     <Compile Include="Infrastructure\Ninject\ValidatorModule.cs" />
     <Compile Include="Infrastructure\SettingsSection.cs" />

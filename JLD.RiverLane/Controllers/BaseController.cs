@@ -3,7 +3,6 @@ using JLD.RiverLane.Models.Enums;
 using System.ComponentModel;
 using System.Web.Mvc;
 using BaseClasses.Helpers;
-using JLD.RiverLane.Infrastructure.Attributes.Authorisation;
 
 namespace JLD.RiverLane.Controllers
 {
